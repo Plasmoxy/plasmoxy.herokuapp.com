@@ -18,7 +18,7 @@ io.sockets.on('connection', function(client){
 app.use(express.static(path.join(__dirname, 'game')));
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/game/index.html');
+  res.sendFile(__dirname + '/game/game.html');
 })
 
 server.listen(PORT);
