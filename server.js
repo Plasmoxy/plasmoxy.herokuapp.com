@@ -15,7 +15,7 @@ io.sockets.on('connection', function(client){
   });
 });
 
-app.use(express.static(path.join(__dirname, 'game')));
+app.use('/game', express.static(path.join(__dirname, 'game')));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/game/game.html');
