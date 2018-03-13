@@ -1,0 +1,21 @@
+{
+  "name": "plasmoxy.herokuapp.com",
+  "keywords": [],
+  "version": "1.0.0",
+  "description": "XDDD",
+  "engines": {
+    "node": "8.10.0"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io":"^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo XD",
+    "start": "node server.js"
+  },
+  "author": "Plasmoxy",
+  "license": ""
+}
