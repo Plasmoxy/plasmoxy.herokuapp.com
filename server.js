@@ -1,6 +1,7 @@
 var express = require('express');
 var fs = require('fs');
 var http = require('http');
+var path = require('path');
 
 const PORT = process.env.PORT || 80;
 
@@ -14,7 +15,7 @@ io.sockets.on('connection', function(client){
   });
 });
 
-app.use('/game', express.static(__dirname + '/game'))
+app.use(express.static(path.join(__dirname, 'game')));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/game/index.html');
