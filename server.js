@@ -9,17 +9,15 @@ var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(client){
-  client.on('chat message', function(msg){ // relay
-    io.emit('chat message', msg);
+  client.on('alpha', function(msg){ // relay
+    io.emit('alpha', msg);
   });
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-})
+app.use('/game', express.static(__dirname + '/game'))
 
-app.get('/chat', function (req,res) {
-  res.sendFile(__dirname + '/chat.html');
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/game/index.html');
 })
 
 server.listen(PORT);
